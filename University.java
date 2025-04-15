@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class University {  
@@ -15,8 +16,8 @@ public class University {
         this.location = "Shah Alam, Selangor, Malaysia";
         this.totalStudents = 17000;
         this.ranking = 580;
-        this.faculties = Arrays.asList("FISE", "FBMP", "FHLS", "IMS", "SHCA", "SESS");
-        this.programmes = Arrays.asList("BCS", "BCF", "BBC", "BGD", "BICT");
+        this.faculties = new ArrayList<>(Arrays.asList("FISE", "FBMP", "FHLS", "IMS", "SHCA", "SESS"));
+        this.programmes = new ArrayList<>(Arrays.asList("BCS", "BCF", "BBC", "BGD", "BICT"));
     }
 
     // Parameterized Constructor
@@ -47,22 +48,22 @@ public class University {
 
     // Method 1 - Display total students
     public void displayTotalStudents() {
-        System.out.println("Total students in the university: " + totalStudents);
+        System.out.println("The total number of students in the university is " + totalStudents);
     }
 
     // Method 2 - List faculties
     public void listFaculties() {
-        System.out.println("Faculties available: " + String.join(", ", faculties));
+        System.out.println("The available faculties in the university are: " + String.join(", ", faculties));
     }
 
     // Method 3 - List programmes
     public void listProgrammes() {
-        System.out.println("Programmes offered: " + String.join(", ", programmes));
+        System.out.println("The programmes offered here are: " + String.join(", ", programmes));
     }
 
     // Method 4 - Display university name and location
     public void displayUniversityDetails() {
-        System.out.println("\n== University Details ==");
+        System.out.println("== University Details ==");
         System.out.println("Name: " + name);
         System.out.println("Location: " + location);
         System.out.println("Ranking: " + ranking);
