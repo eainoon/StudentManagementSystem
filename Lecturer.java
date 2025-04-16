@@ -1,31 +1,35 @@
-// This class represents a Lecturer in the university system
-public class Lecturer extends Person {
-    private String lecturerID;
-    private int experienceYears;
+public class Lecturer {
+    private String id;
+    private String name;
+    private int experience; // in years
 
-    // Constructor to initialize the Lecturer with ID, name, and years of experience
+    // Constructor to initialize a lecturer with id, name, and years of experience
     public Lecturer(String id, String name, int experience) {
-        super(name);  // Call the superclass constructor (Person) to set the name
-        this.lecturerID = id;
-        this.experienceYears = experience;
+        this.id = id;
+        this.name = name;
+        this.experience = experience;
     }
 
-    // Getter for Lecturer ID
-    public String getLecturerID() {
-        return lecturerID;
+    // Getter method for lecturer's ID
+    public String getId() {
+        return id;
     }
 
-    // Getter for Lecturer's years of experience
-    public int getExperienceYears() {
-        return experienceYears;
+    // Getter method for lecturer's name
+    public String getName() {
+        return name;
     }
 
-    // Method to display Lecturer's information
+    // Getter method for years of experience
+    public int getExperience() {
+        return experience;
+    }
+
+    // Method to display lecturer's details
     public void displayLecturerInfo() {
-        System.out.println("\nLecturer Info:");
-        System.out.println("Name: " + getName());
-        System.out.println("Lecturer ID: " + lecturerID);
-        System.out.println("Years of Experience: " + experienceYears);
+        System.out.println("\nLecturer ID: " + id);
+        System.out.println("Lecturer Name: " + name);
+        System.out.println("Years of Experience: " + experience);
     }
 }
 
