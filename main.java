@@ -1,93 +1,71 @@
-import java.util.Arrays;
-
+// This is the main class where the program starts
 public class Main {
+
     public static void main(String[] args) {
-        // Create University
-        University msu = new University();
+        // Creating a University object with basic details
+        University msu = new University("MSU", "Shah Alam", "Selangor", 17000);
+
+        // Adding faculties to the university
+        msu.addFaculty("FISE");
+        msu.addFaculty("FBMP");
+        msu.addFaculty("FHLS");
+        msu.addFaculty("IMS");
+        msu.addFaculty("SHCA");
+        msu.addFaculty("SESS");
+
+        // Adding courses to the university
+        msu.addCourse("Bachelor in Computer Science (BCS)");
+        msu.addCourse("Bachelor in Computer Forensics (BCF)");
+        msu.addCourse("Bachelor in Business Computing (BBC)");
+        msu.addCourse("Bachelor in Graphic Design (BGD)");
+        msu.addCourse("Bachelor in Computing Technology (BICT)");
+
+        // Creating a Department and adding it to the university
+        Department itDept = new Department("Information Sciences and Computing");
+        msu.addDepartment(itDept);
+
+        // Creating and adding a library to the university
+        Library lib = new Library("MSU Central Library", "9AM - 6PM");
+        msu.setLibrary(lib);
+
+        // Creating clubs and adding them to the university
+        Club techClub = new Club("Cyber Synergy Club", "Tech-related events & SDG activities");
+        Club choirClub = new Club("Melodia Choir Club", "Singing and performing arts");
+        msu.addClub(techClub);
+        msu.addClub(choirClub);
+
+        // Creating a lecturer and adding to the department
+        Lecturer drJamal = new Lecturer("L1023", "Dr. Jamal", 12);
+        itDept.addLecturer(drJamal);
+
+        // Creating a student and assigning them to a course
+        Student student1 = new Student("S1234", "Aina", "Bachelor in Computer Science (BCS)");
+        msu.addStudent(student1);
+
+        // Enrolling the student into the Cyber Synergy Club
+        techClub.addMember(student1.getName());
+
+        // Displaying university overview
         msu.displayUniversityDetails();
-        msu.listFaculties();
-        msu.listProgrammes();
-        msu.displayTotalStudents();
 
-        // Create Lecturer
-        Lecturer drJamal = new Lecturer("Dr. Jamal", "L1023", 45, 7500.0, "FISE", 12);
-        drJamal.addCourse("BCS101");
-        drJamal.addCourse("BCF102");
-        drJamal.increaseSalary(500);
+        // Displaying list of faculties
+        msu.displayFaculties();
 
-        // Create Course and link lecturer
-        Course bcs = new Course("Bachelor of Computer Science", "BCS101", 3, drJamal);
-        Course bcf = new Course("Bachelor of Computer Forensics", "BCF102", 3, drJamal);
+        // Displaying courses offered
+        msu.displayCourses();
 
-        // Create Student using polymorphism
-        Person p1 = new Student("Ariana", "S001", 20, 3.75, bcs, 8, msu);
-        Person p2 = new Student("Daniel", "S002", 21, 3.9, bcf, 10, msu);
+        // Displaying department and lecturers
+        itDept.displayDepartmentDetails();
 
-        // Cast back to Student to call specific methods
-        if (p1 instanceof Student) {
-            Student s = (Student) p1;
-            s.recordAttendance();
-            s.updateGpa(3.8);
-            bcs.enrollStudent(s);
-        }
+        // Displaying library info
+        lib.displayLibraryInfo();
 
-        if (p2 instanceof Student) {
-            Student s = (Student) p2;
-            s.recordAttendance();
-            s.updateGpa(4.0);
-            bcf.enrollStudent(s);
-        }
+        // Displaying all club details and their members
+        techClub.displayClubDetails();
+        choirClub.displayClubDetails();
 
-        // Display all persons (demonstrate polymorphism)
-        p1.displayInfo();
-        p2.displayInfo();
-
-        // Display course info
-        bcs.getCourseDetails();
-        bcf.getCourseDetails();
-
-        // Display lecturer info
-        drJamal.displayInfo();
-
-        // --- Support Classes ---
-
-        // Department
-        Department dp = new Department("Information Sciences and Computing", "FISE", "Dr. Zahirah");
-        dp.displayDepartmentInfo();
-        Department.displayAvailableDepartments();
-
-        // Club
-        Club techClub = new Club("Tech Enthusiasts", "Academic", 25);
-        techClub.showClubInfo();
-        techClub.registerMember();
-
-        // Library
-        Library lib = new Library("Main Campus", 2000, true);
-        lib.status();
-        lib.borrowBook();
-        lib.returnBook();
-
-        // --- Loops & Conditionals Demo ---
-
-        System.out.println("\n== Loop: Display Faculty Codes ==");
-        for (String faculty : msu.getFaculties()) {
-            System.out.println("Faculty: " + faculty);
-        }
-
-        System.out.println("\n== While Loop: Show attendance count ==>");
-        int attendance = 5;
-        while (attendance <= 7) {
-            System.out.println("Attendance so far: " + attendance);
-            attendance++;
-        }
-
-        System.out.println("\n== If Condition Check ==");
-        if (drJamal.getExperience() > 10) {
-            System.out.println("Dr. Jamal is a senior lecturer.");
-        } else {
-            System.out.println("Dr. Jamal is a junior lecturer.");
-        }
-
-        System.out.println("\nEnd of Student Management System Demo");
+        // Showing student info
+        student1.displayStudentInfo();
     }
 }
+//In Assignment 2, Eainan is continuing this from Eainan in Assignment 1
