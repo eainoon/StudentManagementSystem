@@ -1,37 +1,30 @@
-public class Person{
-	protected String name;
-	protected String id;
-	protected int age;
-	
-	//Default Constructor
-	public Person(){
-		this.name="unknown";
-		this.id="0";
-		this.age=0;
-	}
-	
-	//Parametarized Constructor
-	public Person(String name, String id,int age){
-		this.name=name;
-		this.id=id;
-		this.age=age;
-	}
-	
-	//getter method
-	public String getName(){return name;}
-	public String getId(){return id;}
-	public int getAge(){return age;}
-	
-	//setter method
-	public void setName(String name){this.name=name;}
-	public void setId(String id){this.id=id;}
-	public void setAge(int age){this.age=age;}
-	
-	//Display method
-	public void displayInfo(){
-		System.out.println("---Person Details---");
-		System.out.println("ID: "+id);
-		System.out.println("Name: "+name);
-		System.out.println("Age: "+age);
-	}
+// This class represents a Person in the university system (base class for Student and Lecturer)
+public class Person {
+    private String id;
+    private String name;
+
+    // Constructor to initialize the Person's id and name
+    public Person(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    // Getter for ID
+    public String getId() {
+        return id;
+    }
+
+    // Getter for Name
+    public String getName() {
+        return name;
+    }
+
+    // Method to display person's information
+    public void displayPersonInfo() {
+        System.out.println("\nPerson Info:");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+    }
 }
+
+//Ui is doing this in Assignment 2
