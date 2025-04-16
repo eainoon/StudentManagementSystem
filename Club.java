@@ -1,27 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// This class represents a Club in the university system
 public class Club {
     private String clubName;
-    private String category; // academic, sports, culture
-    private int totalMembers;
+    private String description;
+    private List<String> members;
 
-    // Constructor
-    public Club(String clubName, String category, int totalMembers) {
-        this.clubName = clubName;
-        this.category = category;
-        this.totalMembers = totalMembers;
+    // Constructor to initialize the club with its name, description, and an empty list of members
+    public Club(String name, String description) {
+        this.clubName = name;
+        this.description = description;
+        this.members = new ArrayList<>();
     }
 
-    // Register a new member
-    public void registerMember() {
-        totalMembers++;
-        System.out.println(clubName + ": 1 new member registered. Total members: " + totalMembers);
+    // Method to add a member to the club
+    public void addMember(String memberName) {
+        members.add(memberName);
     }
 
-    // Display club info
-    public void showClubInfo() {
-        System.out.println("Club Info:");
-        System.out.println("Name: " + clubName);
-        System.out.println("Category: " + category);
-        System.out.println("Total Members: " + totalMembers);
+    // Method to display club details along with its members
+    public void displayClubDetails() {
+        System.out.println("\nClub Name: " + clubName);
+        System.out.println("Description: " + description);
+        System.out.println("Members:");
+        if (members.isEmpty()) {
+            System.out.println("- No members yet.");
+        } else {
+            for (String member : members) {
+                System.out.println("- " + member);
+            }
+        }
     }
 }
+
 //Eainan is doing this in Assignment 2
