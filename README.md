@@ -1,83 +1,88 @@
-Student Management System
+# Student Management System – OOP Assignment 2
 
-Project Overview
+## Project Overview
+This project is a continuation of Assignment 1 by a group of four members. It demonstrates the use of Object-Oriented Programming (OOP) principles to build a Student Management System in Java.
 
-This is a Student Management System for MSU. It allows managing students, courses, and university details using Object-Oriented Programming (OOP) principles in Java. The system includes:
+The program features inheritance, polymorphism, encapsulation, method overriding, constructor overloading, and practical class interactions through a real-world university context.
 
-Student enrollment and attendance tracking
+## Group Members & Responsibilities
 
-Course management (enrollment, removal, details)
+### Assignment 1
+| Name     | Contribution                  |
+|----------|-------------------------------|
+| Eainan   | Main.java, Course.java        |
+| Ui       | Student.java                  |
+| Marsha   | University.java               |
+| Mira     | Lecturer.java                 |
 
-University information retrieval
+### Assignment 2
+| Name     | Role Description                             |
+|----------|----------------------------------------------|
+| Ui       | Person 1: Person.java, Student.java          |
+| Mira     | Person 2: Lecturer.java                      |
+| Marsha   | Person 3: Course.java, University.java       |
+| Eainan   | Person 4: Department.java, Club.java, Library.java, Main.java |
 
-Lecturer details management
-
-Project Structure
-
+## Project Structure
 StudentManagementSystem/
-│── Main.java           # Runs the program
-│── Student.java        # Handles student details and operations
-│── Course.java         # Manages course enrollment and details
-│── University.java     # Stores university information
-│── Lecturer.java       # Manages lecturer details
-│── README.txt          # Instructions on how to run the project
+├── Main.java  
+├── Person.java  
+├── Student.java  
+├── Lecturer.java  
+├── Course.java  
+├── University.java  
+├── Department.java  
+├── Club.java  
+├── Library.java  
+├── README.md  
 
-Requirements
+## OOP Concepts Demonstrated
 
-Java Development Kit (JDK) 17 or later
+| Concept            | Where It's Used                           |
+|--------------------|--------------------------------------------|
+| Inheritance        | Student and Lecturer extend Person         |
+| Polymorphism       | Person p = new Student();                  |
+| Encapsulation      | All attributes are private with access via getters/setters |
+| Method Overriding  | displayInfo() in Student and Lecturer      |
+| Object Interaction | Student ↔ Course ↔ Lecturer ↔ University   |
+| Extra Classes      | Club, Library, Department                  |
+| Looping & Conditions | for, while, and if in Main.java           |
 
-VS Code (or any Java IDE)
+## System Features
+- Student GPA tracking, attendance, and course/university enrollment
+- Lecturer profile management with salary, experience, and courses taught
+- Course creation, details, and student enrollment
+- University with list of faculties and academic programmes
+- Department listing with a static method for common departments
+- Club management with member registration
+- Library system with book borrowing and return functionality
 
-Lecturer Details
+## How to Run the Program
 
-Lecturer Name: Dr. Jamal
+1. Open your terminal or IDE terminal in the project folder.
+2. Compile all Java files using:
+   javac *.java
+3. Run the compiled Main class:
+   java Main
 
-Lecturer ID: L1023
+## Sample Output Recommendations
+For documentation purposes, include screenshots of:
+- Student and lecturer information being displayed
+- GPA and attendance updates
+- Course and university details
+- Department, club, and library functionality
+- Demonstrations of loops and conditional logic
 
-Department: FISE (ISC)
+## Submission Instructions
+- Zip the full project folder containing all .java files and README
+- Include a report (PDF) with explanation and screenshots
+- Submit the ZIP file and the report to eKLAS before 18 April 2025
 
-Experience: 12 years
+## Authors
+- Eainan  
+- Ui  
+- Marsha  
+- Mira  
 
-How to Compile and Run
-
-Open Terminal in VS Code (Ctrl + ~ or View → Terminal).
-
-Navigate to the project folder:
-
-cd path/to/StudentManagementSystem
-
-Compile all Java files:
-
-javac *.java
-
-Run the program:
-
-java Main
-
-Expected Output
-
-Upon successful execution, the system will:
-
-Display university, course, student, and lecturer information
-
-Allow students to enroll in courses
-
-Update GPA and attendance
-
-Handle course removals
-
-Notes
-
-Each student can only enroll in one course.
-
-The system runs based on predefined university and course details.
-
-Ensure that all files (.java) are in the same directory before compiling.
-
-Submission Instructions
-
-Compress the project folder into a .zip file.
-
-Upload the ZIP file to eKLAS before 18 March 2025.
-
-Author: Eainan (Main, Course), Ui (Student), Marsha (University), Mira (Lecturer)
+Faculty of Information Sciences & Engineering  
+MSU
