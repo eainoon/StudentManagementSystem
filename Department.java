@@ -1,33 +1,37 @@
+import java.util.*;
+
+// This class represents a Department in the university system
 public class Department {
-    private String name;
-    private String faculty;
-    private String head;
+    private String departmentName;
+    private List<Lecturer> lecturers = new ArrayList<>();
 
-    // Constructor
-    public Department(String name, String faculty, String head) {
-        this.name = name;
-        this.faculty = faculty;
-        this.head = head;
+    // Constructor to initialize the department with its name
+    public Department(String name) {
+        this.departmentName = name;
     }
 
-    // Getters
-    public String getName() { return name; }
-    public String getFaculty() { return faculty; }
-    public String getHead() { return head; }
-
-    // Display individual department info
-    public void displayDepartmentInfo() {
-        System.out.println("\nDepartment Info:");
-        System.out.println("Name: " + name);
-        System.out.println("Faculty: " + faculty);
-        System.out.println("Head of Department: " + head);
+    // Method to add a lecturer to the department
+    public void addLecturer(Lecturer lecturer) {
+        lecturers.add(lecturer);
     }
 
-    // Static method to display default available departments
-    public static void displayAvailableDepartments() {
-        System.out.println("\nAvailable Departments:");
-        System.out.println("1. Engineering and Technology (ENT)");
-        System.out.println("2. Information Sciences and Computing (ISC)");
-        System.out.println("3. Media Sciences and Graphics (MSG)");
+    // Method to display the details of the department and its lecturers
+    public void displayDepartmentDetails() {
+        System.out.println("\nDepartment: " + departmentName);
+        if (lecturers.isEmpty()) {
+            System.out.println("No lecturers assigned to this department yet.");
+        } else {
+            System.out.println("Lecturers:");
+            for (Lecturer lecturer : lecturers) {
+                lecturer.displayLecturerInfo();  // Display each lecturer's info
+            }
+        }
+    }
+
+    // Getter for the department name
+    public String getDepartmentName() {
+        return departmentName;
     }
 }
+
+//Eainan is doing this in Assignment 2
