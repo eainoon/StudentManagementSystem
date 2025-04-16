@@ -88,6 +88,6 @@ public class Main {
             System.out.println("Dr. Jamal is a junior lecturer.");
         }
 
-        System.out.println("\n🎓 End of Student Management System Demo 🎓");
+        System.out.println("\nEnd of Student Management System Demo");
     }
 }
