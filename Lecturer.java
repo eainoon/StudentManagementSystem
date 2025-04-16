@@ -70,3 +70,98 @@ public class Lecturer {
         System.out.println(name + " is now teaching: " + String.join(", ", coursesTaught));
     }
 }
+import java.util.ArrayList;
+import java.util.List;
+
+public class Lecturer extends Person {
+    private double salary;
+    private String department;
+    private int experience;
+    private List<String> coursesTaught;
+
+    // Default Constructor
+    public Lecturer() {
+        super(); // calls default constructor from Person
+        this.salary = 0.0;
+        this.department = "Unknown";
+        this.experience = 0;
+        this.coursesTaught = new ArrayList<>();
+    }
+
+    // Parameterized Constructor
+    public Lecturer(String name, String id, int age, double salary, String department, int experience) {
+        super(name, id, age);
+        this.salary = salary;
+        this.department = department;
+        this.experience = experience;
+        this.coursesTaught = new ArrayList<>();
+    }
+
+    // Getters
+    public double getSalary() {
+        return salary;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public List<String> getCoursesTaught() {
+        return coursesTaught;
+    }
+
+    // Setters
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public void setCoursesTaught(List<String> coursesTaught) {
+        this.coursesTaught = coursesTaught;
+    }
+
+    // Method 1: Add a course to the list
+    public void addCourse(String courseCode) {
+        coursesTaught.add(courseCode);
+        System.out.println("Lecturer " + getName() + " is now teaching: " + courseCode);
+    }
+
+    // Method 2: Increase salary
+    public void increaseSalary(double amount) {
+        if (amount > 0) {
+            salary += amount;
+            System.out.println("Lecturer " + getName() + "'s new salary: RM" + salary);
+        } else {
+            System.out.println("Invalid salary increment.");
+        }
+    }
+
+    // Overridden Method: Display lecturer details
+    @Override
+    public void displayInfo() {
+        System.out.println("\n=== Lecturer Information ===");
+        super.displayInfo(); // Call Person's displayInfo
+        System.out.println("Department: " + department);
+        System.out.println("Experience: " + experience + " years");
+        System.out.println("Salary: RM" + salary);
+        if (coursesTaught.isEmpty()) {
+            System.out.println("Courses Taught: None yet.");
+        } else {
+            System.out.println("Courses Taught: ");
+            for (String course : coursesTaught) {
+                System.out.println("- " + course);
+            }
+        }
+    }
+}
