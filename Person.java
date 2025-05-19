@@ -1,30 +1,21 @@
-// This class represents a Person in the university system (base class for Student and Lecturer)
 public class Person {
-    private String id;
-    private String name;
+    protected String id;
+    protected String name;
+    protected int age;
 
-    // Constructor to initialize the Person's id and name
-    public Person(String id, String name) {
+    public Person(String id, String name, int age) {
         this.id = id;
         this.name = name;
+        this.age = age;
     }
 
-    // Getter for ID
-    public String getId() {
-        return id;
-    }
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public int getAge() { return age; }
 
-    // Getter for Name
-    public String getName() {
-        return name;
-    }
-
-    // Method to display person's information
-    public void displayPersonInfo() {
-        System.out.println("\nPerson Info:");
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-    }
+    public void setId(String id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setAge(int age) { this.age = age; }
 }
 
 //Ui is doing this in Assignment 2
