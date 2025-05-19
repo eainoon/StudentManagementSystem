@@ -1,5 +1,5 @@
 // This is the main class where the program starts
-public class Main {
+public class main {
 
     public static void main(String[] args) {
         // Creating a University object with basic details
