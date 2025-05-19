@@ -1,20 +1,18 @@
-// This class represents a Course in the university system
+
 public class Course {
-    private String courseName;
+    private String code;
+    private String name;
 
-    // Constructor to initialize the course with its name
-    public Course(String name) {
-        this.courseName = name;
+    public Course(String code, String name) {
+        this.code = code;
+        this.name = name;
     }
 
-    // Getter for the course name
-    public String getCourseName() {
-        return courseName;
-    }
+    public String getCode() { return code; }
+    public String getName() { return name; }
 
-    // Method to display course details
-    public void displayCourseInfo() {
-        System.out.println("Course: " + courseName);
+    public String toString() {
+        return code + " - " + name;
     }
 }
 
