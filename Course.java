@@ -15,5 +15,4 @@ public class Course {
         return code + " - " + name;
     }
 }
-
 //In Assignment 2, Marsha is continuing this from Eainan in Assignment 1
